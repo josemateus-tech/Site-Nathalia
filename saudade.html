@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🩷 Saudade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="pagina-saudade">
+
+  <!-- PARTÍCULAS -->
+  <div class="particulas" id="particulas"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <nav>
+      <a href="feliz.html">💛 Feliz</a>
+      <a href="triste.html">💙 Triste</a>
+      <a href="raiva.html">❤️ Raiva</a>
+      <a href="duvida.html">💜 Dúvida</a>
+      <a href="saudade.html" class="active">🩷 Saudade</a>
+      <a href="secreto.html">🖤 Secreto</a>
+    </nav>
+  </header>
+
+  <!-- CONTEÚDO -->
+  <main class="conteudo-principal">
+    <div class="emoji-principal fade-in">🩷</div>
+    <h1 class="titulo-cursivo fade-in fade-in-delay-1">[PERSONALIZAR: título saudoso]</h1>
+    <hr class="separador fade-in fade-in-delay-2">
+    <p class="texto-corpo fade-in fade-in-delay-2">
+      [PERSONALIZAR: primeiro parágrafo sobre a saudade ser recíproca — algo sobre sentir falta, sobre como a distância não diminui nada, sobre como o coração insiste em lembrar.]
+    </p>
+    <p class="texto-corpo fade-in fade-in-delay-3">
+      [PERSONALIZAR: segundo parágrafo lembrando momentos de forma genérica — algo sobre os pequenos detalhes, sobre gestos simples que ficaram gravados, sobre o que faz sorrir sozinho.]
+    </p>
+    <p class="texto-corpo fade-in fade-in-delay-4">
+      [PERSONALIZAR: terceiro parágrafo com promessa de presença — algo sobre o reencontro, sobre a certeza de que vai passar, sobre guardar carinho até lá.]
+    </p>
+    <a href="index.html" class="btn fade-in fade-in-delay-5">Voltar ao início</a>
+  </main>
+
+  <!-- ASSINATURA -->
+  <footer class="assinatura fade-in fade-in-delay-6">
+    desenvolvido por José Mateus, seu amor
+  </footer>
+
+  <!-- SCRIPT DE PARTÍCULAS -->
+  <script>
+    (function() {
+      const container = document.getElementById('particulas');
+      const cores = ['rgba(232, 120, 138, 0.1)', 'rgba(240, 154, 165, 0.08)', 'rgba(212, 105, 122, 0.07)'];
+      for (let i = 0; i < 25; i++) {
+        const p = document.createElement('div');
+        p.classList.add('particula');
+        const tamanho = Math.random() * 4 + 2;
+        p.style.width = tamanho + 'px';
+        p.style.height = tamanho + 'px';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.bottom = '-10px';
+        p.style.background = cores[Math.floor(Math.random() * cores.length)];
+        p.style.animationDuration = (Math.random() * 15 + 10) + 's';
+        p.style.animationDelay = (Math.random() * 10) + 's';
+        container.appendChild(p);
+      }
+    })();
+  </script>
+
+</body>
+</html>
