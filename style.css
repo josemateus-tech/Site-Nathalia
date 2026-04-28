@@ -1,0 +1,516 @@
+/* ═══════════════════════════════════════════
+   FONTES
+   ═══════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ═══════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  background-color: #0f0f14;
+  color: #e8e0d8;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══════════════════════════════════════════
+   NAVBAR — GLASSMORPHISM
+   ═══════════════════════════════════════════ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(15, 15, 20, 0.65);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.6rem 1rem;
+}
+
+.navbar nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.6rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: rgba(232, 224, 216, 0.55);
+  font-size: 0.82rem;
+  font-weight: 400;
+  padding: 0.35rem 0.7rem;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.navbar a:hover {
+  color: #e8e0d8;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.navbar a.active {
+  color: #f5f0ea;
+  background: rgba(255, 255, 255, 0.1);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════
+   CONTEÚDO PRINCIPAL
+   ═══════════════════════════════════════════ */
+.conteudo-principal {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5rem 1.5rem 3rem;
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════
+   CORAÇÃO / EMOJI PRINCIPAL
+   ═══════════════════════════════════════════ */
+.emoji-principal {
+  font-size: 3rem;
+  margin-bottom: 1.2rem;
+  animation: pulsar 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.1));
+}
+
+@keyframes pulsar {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════
+   TIPOGRAFIA
+   ═══════════════════════════════════════════ */
+.titulo-cursivo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+  color: #f5f0ea;
+}
+
+.subtitulo {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(232, 224, 216, 0.7);
+  margin-bottom: 1.6rem;
+  font-style: italic;
+  letter-spacing: 0.03em;
+}
+
+.texto-corpo {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(232, 224, 216, 0.65);
+  margin-bottom: 1rem;
+  max-width: 520px;
+}
+
+.texto-corpo:last-of-type {
+  margin-bottom: 2rem;
+}
+
+/* ═══════════════════════════════════════════
+   BOTÕES
+   ═══════════════════════════════════════════ */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  padding: 0.7rem 2rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(232, 224, 216, 0.8);
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  margin-top: 0.5rem;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f5f0ea;
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════════════
+   RODAPÉ / ASSINATURA
+   ═══════════════════════════════════════════ */
+.assinatura {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0.8rem 1rem;
+  font-size: 0.68rem;
+  font-weight: 300;
+  color: rgba(232, 224, 216, 0.2);
+  letter-spacing: 0.08em;
+  font-style: italic;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════
+   ANIMAÇÕES DE ENTRADA
+   ═══════════════════════════════════════════ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.fade-in-delay-1 { animation-delay: 0.2s; }
+.fade-in-delay-2 { animation-delay: 0.5s; }
+.fade-in-delay-3 { animation-delay: 0.8s; }
+.fade-in-delay-4 { animation-delay: 1.1s; }
+.fade-in-delay-5 { animation-delay: 1.4s; }
+.fade-in-delay-6 { animation-delay: 1.7s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   PARTÍCULAS DE FUNDO (geradas via JS)
+   ═══════════════════════════════════════════ */
+.particulas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particula {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  animation: flutuar linear infinite;
+}
+
+@keyframes flutuar {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.5);
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100vh) scale(0);
+  }
+}
+
+/* Conteúdo fica acima das partículas */
+.navbar, .conteudo-principal, .assinatura {
+  position: relative;
+  z-index: 1;
+}
+
+/* ═══════════════════════════════════════════
+   EFEITO TYPEWRITER (para secreto.html)
+   ═══════════════════════════════════════════ */
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid rgba(232, 224, 216, 0.3);
+  white-space: normal;
+  display: inline;
+}
+
+.typewriter-cursor {
+  animation: piscar 1s step-end infinite;
+}
+
+@keyframes piscar {
+  0%, 100% { border-color: rgba(232, 224, 216, 0.3); }
+  50% { border-color: transparent; }
+}
+
+/* ═══════════════════════════════════════════
+   TEMAS POR PÁGINA
+   ═══════════════════════════════════════════ */
+
+/* HOME */
+.pagina-home {
+  background: linear-gradient(160deg, #0f0f14 0%, #1a1520 40%, #14141f 100%);
+}
+
+.pagina-home .titulo-cursivo {
+  background: linear-gradient(135deg, #f5deb3, #deb887, #d4a574);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pagina-home .navbar a.active {
+  color: #f5deb3;
+}
+
+/* FELIZ */
+.pagina-feliz {
+  background: linear-gradient(160deg, #0f0f14 0%, #1f1a10 40%, #14141f 100%);
+}
+
+.pagina-feliz .titulo-cursivo {
+  background: linear-gradient(135deg, #ffd700, #f0c040, #e6b830);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pagina-feliz .navbar a.active {
+  color: #ffd700;
+  background: rgba(255, 215, 0, 0.08);
+}
+
+.pagina-feliz .btn {
+  border-color: rgba(255, 215, 0, 0.2);
+}
+
+.pagina-feliz .btn:hover {
+  background: rgba(255, 215, 0, 0.08);
+  border-color: rgba(255, 215, 0, 0.35);
+  color: #ffd700;
+}
+
+/* TRISTE */
+.pagina-triste {
+  background: linear-gradient(160deg, #0f0f14 0%, #0f1525 40%, #14141f 100%);
+}
+
+.pagina-triste .titulo-cursivo {
+  background: linear-gradient(135deg, #6fa8dc, #87b5e0, #5b9bd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pagina-triste .navbar a.active {
+  color: #6fa8dc;
+  background: rgba(111, 168, 220, 0.08);
+}
+
+.pagina-triste .btn {
+  border-color: rgba(111, 168, 220, 0.2);
+}
+
+.pagina-triste .btn:hover {
+  background: rgba(111, 168, 220, 0.08);
+  border-color: rgba(111, 168, 220, 0.35);
+  color: #6fa8dc;
+}
+
+/* RAIVA */
+.pagina-raiva {
+  background: linear-gradient(160deg, #0f0f14 0%, #1f1015 40%, #14141f 100%);
+}
+
+.pagina-raiva .titulo-cursivo {
+  background: linear-gradient(135deg, #c0392b, #e74c3c, #b03a2e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pagina-raiva .navbar a.active {
+  color: #e74c3c;
+  background: rgba(231, 76, 60, 0.08);
+}
+
+.pagina-raiva .btn {
+  border-color: rgba(231, 76, 60, 0.2);
+}
+
+.pagina-raiva .btn:hover {
+  background: rgba(231, 76, 60, 0.08);
+  border-color: rgba(231, 76, 60, 0.35);
+  color: #e74c3c;
+}
+
+/* DÚVIDA */
+.pagina-duvida {
+  background: linear-gradient(160deg, #0f0f14 0%, #1a1028 40%, #14141f 100%);
+}
+
+.pagina-duvida .titulo-cursivo {
+  background: linear-gradient(135deg, #9b59b6, #b07cc6, #8e44ad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pagina-duvida .navbar a.active {
+  color: #b07cc6;
+  background: rgba(155, 89, 182, 0.08);
+}
+
+.pagina-duvida .btn {
+  border-color: rgba(155, 89, 182, 0.2);
+}
+
+.pagina-duvida .btn:hover {
+  background: rgba(155, 89, 182, 0.08);
+  border-color: rgba(155, 89, 182, 0.35);
+  color: #b07cc6;
+}
+
+/* SAUDADE */
+.pagina-saudade {
+  background: linear-gradient(160deg, #0f0f14 0%, #201018 40%, #14141f 100%);
+}
+
+.pagina-saudade .titulo-cursivo {
+  background: linear-gradient(135deg, #e8788a, #f09aa5, #d4697a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pagina-saudade .navbar a.active {
+  color: #e8788a;
+  background: rgba(232, 120, 138, 0.08);
+}
+
+.pagina-saudade .btn {
+  border-color: rgba(232, 120, 138, 0.2);
+}
+
+.pagina-saudade .btn:hover {
+  background: rgba(232, 120, 138, 0.08);
+  border-color: rgba(232, 120, 138, 0.35);
+  color: #e8788a;
+}
+
+/* SECRETO */
+.pagina-secreto {
+  background: linear-gradient(160deg, #0f0f14 0%, #15151f 40%, #0f0f18 100%);
+}
+
+.pagina-secreto .titulo-cursivo {
+  background: linear-gradient(135deg, #c0c0c0, #e0d8d0, #a8a0a0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pagina-secreto .navbar a.active {
+  color: #c0c0c0;
+  background: rgba(192, 192, 192, 0.08);
+}
+
+.pagina-secreto .btn {
+  border-color: rgba(192, 192, 192, 0.2);
+}
+
+.pagina-secreto .btn:hover {
+  background: rgba(192, 192, 192, 0.08);
+  border-color: rgba(192, 192, 192, 0.35);
+  color: #c0c0c0;
+}
+
+/* ═══════════════════════════════════════════
+   SEPARADOR DECORATIVO
+   ═══════════════════════════════════════════ */
+.separador {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232, 224, 216, 0.2), transparent);
+  margin: 1.2rem auto;
+  border: none;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVO
+   ═══════════════════════════════════════════ */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0.5rem 0.6rem;
+  }
+
+  .navbar nav {
+    gap: 0.2rem 0.35rem;
+  }
+
+  .navbar a {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.55rem;
+  }
+
+  .conteudo-principal {
+    padding: 4.5rem 1.2rem 3rem;
+  }
+
+  .titulo-cursivo {
+    font-size: 2rem;
+  }
+
+  .subtitulo {
+    font-size: 0.92rem;
+  }
+
+  .texto-corpo {
+    font-size: 0.88rem;
+  }
+
+  .emoji-principal {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .titulo-cursivo {
+    font-size: 1.7rem;
+  }
+
+  .navbar a {
+    font-size: 0.68rem;
+    padding: 0.25rem 0.45rem;
+  }
+}
