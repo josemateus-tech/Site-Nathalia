@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💛 Feliz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="pagina-feliz">
+
+  <!-- PARTÍCULAS -->
+  <div class="particulas" id="particulas"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <nav>
+      <a href="feliz.html" class="active">💛 Feliz</a>
+      <a href="triste.html">💙 Triste</a>
+      <a href="raiva.html">❤️ Raiva</a>
+      <a href="duvida.html">💜 Dúvida</a>
+      <a href="saudade.html">🩷 Saudade</a>
+      <a href="secreto.html">🖤 Secreto</a>
+    </nav>
+  </header>
+
+  <!-- CONTEÚDO -->
+  <main class="conteudo-principal">
+    <div class="emoji-principal fade-in">💛</div>
+    <h1 class="titulo-cursivo fade-in fade-in-delay-1">[PERSONALIZAR: título feliz]</h1>
+    <hr class="separador fade-in fade-in-delay-2">
+    <p class="texto-corpo fade-in fade-in-delay-2">
+      [PERSONALIZAR: primeiro parágrafo celebrando esse momento — algo leve, caloroso, sobre como é bom ver você feliz e como essa alegria ilumina tudo ao redor.]
+    </p>
+    <p class="texto-corpo fade-in fade-in-delay-3">
+      [PERSONALIZAR: segundo parágrafo com carinho doce — algo sobre querer estar perto para compartilhar cada sorriso e cada instante bonito.]
+    </p>
+    <a href="index.html" class="btn fade-in fade-in-delay-4">Voltar ao início</a>
+  </main>
+
+  <!-- ASSINATURA -->
+  <footer class="assinatura fade-in fade-in-delay-5">
+    desenvolvido por José Mateus, seu amor
+  </footer>
+
+  <!-- SCRIPT DE PARTÍCULAS -->
+  <script>
+    (function() {
+      const container = document.getElementById('particulas');
+      const cores = ['rgba(255, 215, 0, 0.12)', 'rgba(240, 192, 64, 0.1)', 'rgba(255, 235, 150, 0.08)'];
+      for (let i = 0; i < 25; i++) {
+        const p = document.createElement('div');
+        p.classList.add('particula');
+        const tamanho = Math.random() * 4 + 2;
+        p.style.width = tamanho + 'px';
+        p.style.height = tamanho + 'px';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.bottom = '-10px';
+        p.style.background = cores[Math.floor(Math.random() * cores.length)];
+        p.style.animationDuration = (Math.random() * 15 + 10) + 's';
+        p.style.animationDelay = (Math.random() * 10) + 's';
+        container.appendChild(p);
+      }
+    })();
+  </script>
+
+</body>
+</html>
